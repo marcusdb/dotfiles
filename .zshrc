@@ -6,6 +6,8 @@ SAVEHIST=100000
 
 # vim bindings
 bindkey -v
+# ctrl a + ctrl e behaviour
+bindkey -e
 
 
 fpath=( "$HOME/.zfunctions" $fpath )
@@ -25,6 +27,9 @@ antigen bundle brew
 antigen bundle brew-cask
 antigen bundle robbyrussell/oh-my-zsh plugins/z
 antigen bundle command-not-found
+
+
+
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
