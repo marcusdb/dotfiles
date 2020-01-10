@@ -26,7 +26,7 @@ export HISTTIMEFORMAT='%F %T '
 
 
 # load Z jumper
-. /Users/marcusdb/code/z/z.sh
+. ~/code/z/z.sh
 
 
 
