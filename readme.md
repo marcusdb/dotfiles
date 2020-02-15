@@ -18,7 +18,7 @@ brew install thefuck
 
 #### bash_completions IF BASH
 * brew install bash-completion
-* brew tap homebrew/completions
+* brew tap homebrew/homebrew-core
 
 #### install software
 brew install antigen (if zsh)

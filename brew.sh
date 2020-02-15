@@ -24,7 +24,7 @@ brew install bash
 
 brew install bash-completion
 
-brew install homebrew/completions/brew-cask-completion
+brew tap homebrew/homebrew-core
 
 # z hopping around folders
 brew install z
