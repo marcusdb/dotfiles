@@ -8,26 +8,21 @@ brew update
 # Upgrade any already-installed formulae
 brew upgrade
 
-
+brew install antigen
 # GNU core utilities (those that come with OS X are outdated)
-brew install coreutils
-brew install moreutils
+#brew install coreutils
+#brew install moreutils
 # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
-brew install findutils
+#brew install findutils
 # GNU `sed`, overwriting the built-in `sed`
 #brew install gnu-sed --with-default-names
 
 
-# Bash 4
-# Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
-brew install bash
-
-brew install bash-completion
-
-brew tap homebrew/homebrew-core
-
 # z hopping around folders
 brew install z
+
+#fast finder https://github.com/sharkdp/fd
+brew install fd
 
 # run this script when this file changes guy.
 #brew install entr
@@ -40,13 +35,13 @@ brew install z
 brew install mtr
 
     # allow mtr to run without sudo
-    mtrlocation=$(brew info mtr | grep Cellar | sed -e 's/ (.*//') #  e.g. `/Users/paulirish/.homebrew/Cellar/mtr/0.86`
+    mtrlocation=$(brew info mtr | grep Cellar | sed -e 's/ (.*//') #  e.g. `/Users/user/.homebrew/Cellar/mtr/0.86`
     sudo chmod 4755 $mtrlocation/sbin/mtr
     sudo chown root $mtrlocation/sbin/mtr
 
 
 # Install other useful binaries
-#brew install the_silver_searcher
+brew install the_silver_searcher
 #brew install fzf
 
 brew install git
@@ -60,14 +55,9 @@ brew install node # This installs `npm` too using the recommended installation m
 
 brew install terminal-notifier
 
-#brew install android-platform-tools
-#brew install pidcat   # colored logcat guy
 
 brew install ncdu # find where your diskspace went
 
-brew install go
-
-#brew install zsh
 
 # Remove outdated versions from the cellar
 brew cleanup

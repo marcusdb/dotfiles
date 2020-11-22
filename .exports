@@ -1,5 +1,5 @@
 # vim as default
-#export EDITOR="vim"
+export EDITOR="vim"
 
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
@@ -10,10 +10,7 @@ export LANG="en_US"
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-# here's LS_COLORS
-# github.com/trapd00r/LS_COLORS
-#command -v gdircolors >/dev/null 2>&1 || alias gdircolors="dircolors"
-#eval "$(gdircolors -b ~/.dircolors)"
-
 #export PATH=$PATH:~/bin
 export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export GOPATH=$HOME/Documents/env/go
+export GOBIN=$GOPATH/bin
