@@ -10,10 +10,10 @@ brew upgrade
 
 brew install antigen
 # GNU core utilities (those that come with OS X are outdated)
-#brew install coreutils
-#brew install moreutils
+brew install coreutils
+brew install moreutils
 # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
-#brew install findutils
+brew install findutils
 # GNU `sed`, overwriting the built-in `sed`
 #brew install gnu-sed --with-default-names
 

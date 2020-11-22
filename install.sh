@@ -1,4 +1,4 @@
-./brew.sh
+#./brew.sh
 
 #cp .bash_profile ~/.bash_profile
 #cp .bash_prompt ~/.bash_prompt
