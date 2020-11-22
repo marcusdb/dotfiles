@@ -93,6 +93,11 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 # uncomment to finish profiling
 # zprof
 
+for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
+	echo $file
+    [ -r "$file" ] && source "$file"
+done
+unset file
 
 
 # Load default dotfiles
