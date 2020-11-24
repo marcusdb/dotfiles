@@ -27,7 +27,8 @@ antigen bundle brew
 antigen bundle brew-cask
 antigen bundle robbyrussell/oh-my-zsh plugins/z
 antigen bundle command-not-found
-
+antigen bundle docker
+antigen bundle kubectl
 
 
 
