@@ -7,4 +7,5 @@ cp .aliases ~/.aliases
 cp .functions ~/.functions
 cp .exports ~/.exports
 cp .inputrc ~/.inputrc
+cp .tmux.conf ~/.tmux.conf
 

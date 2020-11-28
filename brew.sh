@@ -58,6 +58,7 @@ brew install terminal-notifier
 
 brew install ncdu # find where your diskspace went
 
+brew install tmux
 
 # Remove outdated versions from the cellar
 brew cleanup
