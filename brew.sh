@@ -39,6 +39,7 @@ brew install mtr
     sudo chmod 4755 $mtrlocation/sbin/mtr
     sudo chown root $mtrlocation/sbin/mtr
 
+brew install zsh-history-substring-search
 
 # Install other useful binaries
 brew install the_silver_searcher
@@ -58,7 +59,12 @@ brew install terminal-notifier
 
 brew install ncdu # find where your diskspace went
 
+brew install cdargs
+
 brew install tmux
 
+brew install fzf
+
+brew install thefuck
 # Remove outdated versions from the cellar
 brew cleanup
