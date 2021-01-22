@@ -16,8 +16,8 @@ fpath=( "$HOME/.zfunctions" $fpath )
 # antigen time!
 source /usr/local/share/antigen/antigen.zsh
 
-# Don't load the oh-my-zsh's library. Takes too long. No need.
-	# antigen use oh-my-zsh
+
+antigen use oh-my-zsh
 
 antigen bundle git
 antigen bundle extract
@@ -44,10 +44,10 @@ antigen bundle tarruda/zsh-autosuggestions
 # colors for all files!
 antigen bundle trapd00r/zsh-syntax-highlighting-filetypes
 
-# dont set a theme, because pure does it all
-#antigen theme steeef
+
+antigen theme maran 
 antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
+#antigen bundle sindresorhus/pure
 
 
 # Tell Antigen that you're done.
@@ -104,3 +104,4 @@ unset file
 # Load default dotfiles
 #source ~/.bash_profile
 
+source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
