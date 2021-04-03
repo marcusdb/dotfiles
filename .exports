@@ -12,8 +12,8 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 #export PATH=$PATH:~/bin
 export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-export GOPATH=$HOME/Documents/env/golib
-export GOBIN=$GOPATH/bin
-export GOPATH=$GOPATH:$HOME/Documents/env/go
+#export GOPATH=$HOME/Documents/env/golib
+#export GOBIN=$GOPATH/bin
+#export GOPATH=$GOPATH:$HOME/Documents/env/go
 
 
