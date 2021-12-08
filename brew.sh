@@ -47,5 +47,21 @@ brew install --cask iterm2
 
 brew install --cask gpg-suite
 
+#github cli
+brew install gh
+
+#Tilt - local kubernetes dev
+brew install tilt-dev/tap/tilt
+brew install tilt-dev/tap/ctlptl
+###
+
+brew install --cask slack
+
+brew install --cask zoom
+
+brew install go
+
+brew install helm
+
 # Remove outdated versions from the cellar
 brew cleanup
