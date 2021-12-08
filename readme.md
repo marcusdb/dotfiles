@@ -1,24 +1,6 @@
 
 ## Setup MAC
 
-#### hidden files
-The long way to show hidden Mac OS X files is as follows:
-1. Open Terminal found in Finder > Applications > Utilities.
-2. In Terminal, paste the following: defaults write com.apple.finder AppleShowAllFiles YES.
-3. Press return.
-4. Hold the 'Option/alt' key, then right click on the Finder icon in the dock and click Relaunch.
-
-#### Z jump around
-* git clone https://github.com/rupa/z.git ~/code/z
-* add . ~/code/z/z.sh to bash_profile
-
-#### the fuck command corrector
-brew install thefuck
-
-
-#### bash_completions IF BASH
-* brew install bash-completion
-* brew tap homebrew/homebrew-core
 
 #### install software
 brew install antigen (if zsh)
