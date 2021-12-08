@@ -43,6 +43,31 @@ zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "hlissner/zsh-autopair"
 
+
+# antigen time!
+source /opt/homebrew/share/antigen/antigen.zsh
+
+antigen use oh-my-zsh
+
+antigen bundle git
+antigen bundle extract
+antigen bundle pip
+antigen bundle brew
+antigen bundle brew-cask
+antigen bundle command-not-found
+antigen bundle docker
+antigen bundle kubectl
+
+# colors for all files!
+antigen bundle trapd00r/zsh-syntax-highlighting-filetypes
+
+antigen theme Eastwood 
+antigen bundle mafredri/zsh-async
+#antigen bundle sindresorhus/pure
+
+# Tell Antigen that you're done.
+antigen apply
+
 # For more plugins: https://github.com/unixorn/awesome-zsh-plugins
 # More completions https://github.com/zsh-users/zsh-completions
 
@@ -61,40 +86,9 @@ bindkey "^j" down-line-or-beginning-search # Down
 bindkey -r "^u"
 bindkey -r "^d"
 
-# FZF 
-# TODO update for mac
-[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
-[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
-[ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
-[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f $ZDOTDIR/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
-# export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
+
+
+
 compinit
 
-# Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
-# bindkey '^e' edit-command-line
-
-# TODO Remove these
-setxkbmap -option caps:escape
-xset r rate 210 40
-
-# Speedy keys
-xset r rate 210 40
-
-# Environment variables set everywhere
-export EDITOR="nvim"
-export TERMINAL="alacritty"
-export BROWSER="brave"
-
-# For QT Themes
-export QT_QPA_PLATFORMTHEME=qt5ct
-
-setxkbmap -option caps:escape
-# swap escape and caps
-# setxkbmap -option caps:swapescape
-# setxkbmap -option caps:escape
-# swap escape and caps
-# setxkbmap -option caps:swapescape
 

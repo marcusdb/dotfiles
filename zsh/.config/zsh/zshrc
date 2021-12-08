@@ -48,7 +48,7 @@ zsh_add_plugin "MichaelAquilina/zsh-you-should-use"
 # More completions https://github.com/zsh-users/zsh-completions
 
 # antigen time!
-source /usr/local/share/antigen/antigen.zsh
+source /opt/homebrew/share/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 

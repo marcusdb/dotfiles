@@ -31,7 +31,7 @@ brew install the_silver_searcher
 
 brew install fzf
 
-brew install ffmpeg --with-libvpx
+brew install ffmpeg
 
 brew install terminal-notifier
 
@@ -41,6 +41,11 @@ brew install cdargs
 
 brew install tmux
 
-brew install thefuck
+brew install nodejs
+
+brew install --cask iterm2
+
+brew install --cask gpg-suite
+
 # Remove outdated versions from the cellar
 brew cleanup
