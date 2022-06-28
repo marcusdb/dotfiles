@@ -19,7 +19,7 @@ brew install findutils --default-names
 # GNU `sed`, overwriting the built-in `sed`
 brew install gnu-sed --with-default-names
 
-#other
+#other to be validated
 brew install gnu-tar --default-names  
 brew install gnu-which --default-names  
 brew install gnutls --default-names  
@@ -33,5 +33,7 @@ brew install wget
 brew install nmap  
 brew install gpg  
 brew install htop  
+
+
 
 
