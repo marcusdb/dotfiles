@@ -65,5 +65,8 @@ brew install go
 
 brew install helm
 
+#Time to play
+brew install --cask steam
+
 # Remove outdated versions from the cellar
 brew cleanup
