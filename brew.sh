@@ -51,8 +51,10 @@ brew install --cask gpg-suite
 brew install gh
 
 #Tilt - local kubernetes dev
-brew install tilt-dev/tap/tilt
-brew install tilt-dev/tap/ctlptl
+brew install kind
+brew install tilt
+brew install ctlptl
+brew install kubernetes-cli
 ###
 
 brew install --cask slack
