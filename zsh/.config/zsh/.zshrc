@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #!/bin/sh
 export ZDOTDIR=$HOME/.config/zsh
 HISTFILE=~/.zsh_history
@@ -47,6 +54,7 @@ zsh_add_plugin "hlissner/zsh-autopair"
 # antigen time!
 source /opt/homebrew/share/antigen/antigen.zsh
 
+antigen reset
 antigen use oh-my-zsh
 
 antigen bundle git
@@ -58,13 +66,7 @@ antigen bundle command-not-found
 antigen bundle docker
 antigen bundle kubectl
 
-# colors for all files!
-antigen bundle trapd00r/zsh-syntax-highlighting-filetypes
-
-antigen theme Eastwood 
-antigen bundle mafredri/zsh-async
-#antigen bundle sindresorhus/pure
-
+antigen theme romkatv/powerlevel10k 
 # Tell Antigen that you're done.
 antigen apply
 
@@ -91,4 +93,5 @@ bindkey -r "^d"
 
 compinit
 
-
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

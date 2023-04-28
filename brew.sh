@@ -17,26 +17,25 @@ brew install zoxide
 brew install fd
 
 # mtr - ping & traceroute. best.
-brew install mtr
-
-    # allow mtr to run without sudo
-    mtrlocation=$(brew info mtr | grep Cellar | sed -e 's/ (.*//') #  e.g. `/Users/user/.homebrew/Cellar/mtr/0.86`
-    sudo chmod 4755 $mtrlocation/sbin/mtr
-    sudo chown root $mtrlocation/sbin/mtr
 
 brew install zsh-history-substring-search
 
-# Install other useful binaries
+#https://github.com/ggreer/the_silver_searcher
 brew install the_silver_searcher
 
+#https://github.com/junegunn/fzf
 brew install fzf
 
+#really??
 brew install ffmpeg
 
+#https://github.com/julienXX/terminal-notifier
 brew install terminal-notifier
 
-brew install ncdu # find where your diskspace went
+# find where your diskspace went
+brew install ncdu 
 
+#https://www.linux.com/training-tutorials/cdargs-brings-bookmarks-linux-command-line/
 brew install cdargs
 
 brew install tmux
@@ -61,7 +60,7 @@ brew install --cask slack
 
 brew install --cask zoom
 
-brew install go
+brew install --cask raycast
 
 brew install helm
 
