@@ -35,9 +35,6 @@ brew install terminal-notifier
 # find where your diskspace went
 brew install ncdu 
 
-#https://www.linux.com/training-tutorials/cdargs-brings-bookmarks-linux-command-line/
-brew install cdargs
-
 brew install tmux
 
 brew install nodejs
@@ -66,6 +63,9 @@ brew install helm
 
 #Time to play
 brew install --cask steam
+
+
+brew install magic-wormhole
 
 # Remove outdated versions from the cellar
 brew cleanup
