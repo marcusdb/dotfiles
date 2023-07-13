@@ -37,7 +37,7 @@ brew install ncdu
 
 brew install tmux
 
-brew install nodejs
+brew install node@18
 
 brew install --cask iterm2
 
