@@ -11,7 +11,8 @@ brew install stow
 
 #brew install antigen
 
-#brew install zoxide
+#https://github.com/ajeetdsouza/zoxide a smarter CD
+brew install zoxide
 
 #fast finder https://github.com/sharkdp/fd
 brew install fd
@@ -88,6 +89,10 @@ brew install bat
 brew install ohueter/tap/autokbisw
 brew services start autokbisw
 
+
+#Language tool
+brew install languagetool
+#brew services start languagetool
 
 
 # Remove outdated versions from the cellar
