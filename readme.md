@@ -32,8 +32,17 @@ brew install tmux
 brew install wget  
 brew install nmap  
 brew install gpg  
-brew install htop  
+brew install htop 
 
+Add
+ xcodebuild -license
+Add
+Because of steam
+ softwareupdate --install-rosetta --agree-to-license
+Add 
+brew install --cask whatsapp 
+Add
+brew install --cask visual-studio-code
 
 
 
