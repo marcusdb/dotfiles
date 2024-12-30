@@ -29,7 +29,6 @@ brew install fzf
 
 #really??
 #brew install ffmpeg
-
 #https://github.com/julienXX/terminal-notifier
 #brew install terminal-notifier
 
@@ -52,6 +51,8 @@ brew install kind
 brew install tilt
 brew install ctlptl
 brew install kubernetes-cli
+
+brew install --cask rancher
 ###
 
 brew install --cask slack
@@ -94,6 +95,16 @@ brew services start autokbisw
 brew install languagetool
 #brew services start languagetool
 
-
+brew install --cask insta360-studio
 # Remove outdated versions from the cellar
+
+brew install --cask blender
+
+brew install --cask postman
+
+#internet access for local pages
+brew install ngrok/ngrok/ngrok
+brew install openjdk@17
+brew install discord
 brew cleanup
+ 
