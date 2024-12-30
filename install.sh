@@ -13,10 +13,10 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 
 ./brew.sh
 
-#installs node 20
+#installs node 2P
 nvm install 20 
 
-npm install -g statikk
+npm install -g statikk∏
 
 stow zsh -t ~/ 
 
