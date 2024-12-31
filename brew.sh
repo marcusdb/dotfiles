@@ -18,6 +18,11 @@ brew install zoxide
 brew install fd
 
 #zsh
+brew install jandedobbeleer/oh-my-posh/oh-my-posh
+# install font for oh-my-posh
+brew install --cask font-fira-code-nerd-font
+
+
 brew install zsh-autosuggestions
 brew install zsh-history-substring-search
 
