@@ -48,6 +48,9 @@ brew install --cask iterm2
 
 brew install --cask gpg-suite
 
+
+brew install neovim
+
 #github cli
 brew install gh
 
@@ -112,4 +115,9 @@ brew install ngrok/ngrok/ngrok
 brew install openjdk@17
 brew install discord
 brew cleanup
- 
+
+# add karbiner elements
+# to add keyboard casting
+brew install --cask keycastr  
+
+brew install ollama

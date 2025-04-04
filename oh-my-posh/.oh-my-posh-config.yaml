@@ -26,25 +26,25 @@ blocks:
 - type: prompt
   alignment: left
   segments:
-  - type: gcp
-    style: powerline
-    powerline_symbol: 
-    foreground: "#ffffff"
-    background: "#47888d"
-    template: "  {{.Project}} :: {{.Account}} "
+  #- type: gcp
+  #  style: powerline
+  #  powerline_symbol: 
+  #  foreground: "#ffffff"
+  #  background: "#47888d"
+  #  template: "  {{.Project}} :: {{.Account}} "
   - type: kubectl
     style: powerline
     powerline_symbol: 
     foreground: "#000000"
     background: "#ebcc34"
-    template: " ﴱ {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} "
-  - leading_diamond: 
-    trailing_diamond: 
-    template: " {{ if .SSHSession }}\ueba9 {{ end }}{{ .UserName }} "
-    foreground: p:black
-    background: p:yellow
-    type: session
-    style: diamond
+    template: "{{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} "
+#  - leading_diamond: 
+#    trailing_diamond: 
+#    template: " {{ if .SSHSession }}\ueba9 {{ end }}{{ .UserName }} "
+#    foreground: p:black
+#    background: p:yellow
+#    type: session
+#    style: diamond
   - properties:
       style: folder
     template: " \uea83 {{ path .Path .Location }} "

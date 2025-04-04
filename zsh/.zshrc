@@ -148,3 +148,14 @@ if [ -f '/Users/marcusdb/Documents/env/google-cloud-sdk/completion.zsh.inc' ]; t
 
 # Created by `pipx` on 2024-12-30 12:09:31
 export PATH="$PATH:/Users/marcusdb/.local/bin"
+export PATH="$PATH:$(yarn global bin)"
+
+
+# Useful Functions
+alias chmox='chmod -x'
+alias cask='brew cask' # i <3 u cask
+alias where=which # sometimes i forget
+alias brwe=brew  #typos
+
+alias vim="nvim"
+alias vi="nvim"

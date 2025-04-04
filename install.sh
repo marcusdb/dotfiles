@@ -13,10 +13,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 ./brew.sh
 
-#installs node 2P
-nvm install 20 
+#installs node 20
+nvm install node@20 
 
-npm install -g statikk∏
+npm install -g statikk
 
 stow zsh -t ~/ 
 
