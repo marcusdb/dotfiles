@@ -2,7 +2,6 @@
 [user]
 	name = Marcus Bronstein
 	email = marcusdb@gmail.com
-  
 
 [alias]
 	c = commit -am

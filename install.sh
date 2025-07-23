@@ -13,8 +13,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 ./brew.sh
 
-#installs node 20
-nvm install node@22 
+#installs node 22
+nvm install node@22
 
 npm install -g statikk
 
@@ -27,6 +27,8 @@ stow oh-my-posh -t ~/
 stow claude -t ~/
 
 stow karabiner -t ~/
+
+>>>>>>> origin/master
 
 
 
