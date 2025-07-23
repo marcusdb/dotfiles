@@ -1,0 +1,51 @@
+{
+  "permissions": {
+    "allow": [
+      "Write",
+      "MultiEdit",
+      "Edit",
+      "Bash"
+    ],
+    "deny": []
+  },
+  "model": "sonnet",
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "redis",
+    "postgres",
+    "postgres-prod",
+    "github",
+    "puppeteer",
+    "time-mcp",
+    "shared-server",
+    "context7-mcp",
+    "exa",
+    "playwright"
+  ],
+  "hooks": {
+
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "tsx ~/.claude/hooks/audio-handler.ts '{\"event\":\"Stop\"}'"
+          }
+        ]
+      }
+    ],
+   
+    "Notification": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "tsx hooks/audio-handler.ts '{\"event\":\"Notification\"}'"
+          }
+        ]
+      }
+    ]
+  }
+}
