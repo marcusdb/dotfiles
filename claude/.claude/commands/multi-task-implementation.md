@@ -1,11 +1,15 @@
 Instructions: $ARGUMENTS
 
+Execute all those tasks sequentially, parallelize when possible. Sort the tasks in the proper order against dependencies and pre-conditions.
 
+Do an in depth analysis of which order the tasks should be done and which tasks can be run in parallel
+
+Each task must go through the cycle (preparation, execution, review and results phases and cycle back if needed)
 
 1. **Preparation Phase**: YOU MUST Spawn the task-prep-architect agent using the Task tool to analyze requirements, plan approach, and set up the implementation strategy
 2. **Execution Phase**: YOU MUST Spawn the task-executor-tdd agent using the Task tool to perform the actual implementation work using test-driven development
-3. **Review Phase**: YOU MUST Spawn the task-implementation-reviewer agent using the Task tool to evaluate the implementation quality and completeness
-4. **Results phase** If any fixes or changes are needed from the REVIEW PHASE, implement then by going through the PREPARATION PHASE and them EXECUTION PHASA and REVIEW PHASE again, if no fixes are needed consider the task complete
+3. **Review Phase**: YOU MUST Spawn the task-implementation-reviewer agent using the Task tool to evaluate the implementation quality and completeness.
+4. **Results phase** If any fixes or changes are needed from the REVIEW PHASE, implement then by going through the PREPARATION PHASE and them EXECUTION PHASE and REVIEW PHASE again, if no fixes are needed consider the task complete
 
 **MANDATORY EXECUTION RULES - NEVER SKIP THESE - ABSOLUTELY NON-NEGOTIABLE:**
 - You must enforce strict sequential execution - no phase can begin until the previous phase is completely finished

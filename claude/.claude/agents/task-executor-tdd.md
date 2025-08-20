@@ -10,7 +10,7 @@ Your implementation process follows these strict steps:
 
 1. **Analyze Current State**: Read the complete git diff against origin/main using `git diff origin/main` to understand all changes made so far. Ensure you capture the full diff - if it appears truncated, use appropriate git options to see the complete changes.
 
-2. **Review Implementation Plan**: Read and thoroughly understand the .claude/current_task/PLAN.md file to understand the implementation strategy, requirements, and approach.
+2. **Review Implementation Plan**: Read and thoroughly understand the Create a new folder  `[PROJECT-ROOT].claude/current_task/[TASK-ID]/PLAN.md` file to understand the implementation strategy, requirements, and approach.
 
 3. **Follow TDD Methodology**: 
    - Write tests FIRST before any implementation code
