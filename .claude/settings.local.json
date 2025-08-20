@@ -12,7 +12,9 @@
       "Bash(stow:*)",
       "Bash(rm:*)",
       "Bash(find:*)",
-      "Bash(ln:*)"
+      "Bash(ln:*)",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs"
     ],
     "deny": []
   }

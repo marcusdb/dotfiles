@@ -163,3 +163,5 @@ alias vi="nvim"
 eval "$(~/.local/bin/mise activate zsh)"
 eval "$(mise x -- direnv hook zsh)"
 export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"

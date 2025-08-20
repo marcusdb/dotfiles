@@ -8,7 +8,6 @@
     ],
     "deny": []
   },
-  "model": "sonnet",
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "redis",
@@ -23,29 +22,38 @@
     "playwright"
   ],
   "hooks": {
-
     "Stop": [
       {
-        "matcher": "*",
         "hooks": [
           {
             "type": "command",
-            "command": "tsx ~/.claude/hooks/audio-handler.ts '{\"event\":\"Stop\"}'"
+            "command": "tsx ~/.claude/hooks/audio-handler.ts"
           }
         ]
       }
     ],
-   
-    "Notification": [
+    "SubagentStop": [
       {
-        "matcher": "*",
         "hooks": [
           {
             "type": "command",
-            "command": "tsx hooks/audio-handler.ts '{\"event\":\"Notification\"}'"
+            "command": "tsx ~/.claude/hooks/audio-handler.ts"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "tsx ~/.claude/hooks/audio-handler.ts"
           }
         ]
       }
     ]
+  },
+  "feedbackSurveyState": {
+    "lastShownTime": 1754242567687
   }
 }
