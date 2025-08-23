@@ -62,6 +62,10 @@ class AudioNotificationHandler {
   }
 
   async handleHook(input: HookInput): Promise<void> {
+    // Log ALL events with full details
+    //const debugLog = `[${new Date().toISOString()}] Event: ${input.hook_event_name} | Full Input: ${JSON.stringify(input)}\n`;
+    //require('fs').appendFileSync('/tmp/claude-hooks.log', debugLog);
+    
     const output: HookOutput = {
       continue: true,
       suppressOutput: false
