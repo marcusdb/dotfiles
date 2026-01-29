@@ -67,7 +67,9 @@ Before writing any code, establish situational awareness:
 
    **DO NOT proceed to implementation until every check is green.**
    If ANY check fails, stop and fix it immediately before doing anything
-   else. Commit the fix separately. A new feature must never be started
+   else — this includes pre-existing issues not caused by your changes.
+   NEVER work on a bad codebase. Fix ALL failures regardless of origin.
+   Commit the fix separately. A new feature must never be started
    on a broken codebase — no exceptions.
 
 4. **Break down the work** — decompose the task into small, independently
@@ -191,6 +193,7 @@ missing, say so explicitly rather than guessing.
 
 ## Guardrails
 
+- NEVER proceed without fixing ALL issues — including pre-existing ones not caused by your changes. A broken codebase is never acceptable as a starting point.
 - Never write production code without a failing test first
 - Never skip the refactor step — it is the most commonly neglected part of TDD
 - Never delete or weaken a test to make it pass

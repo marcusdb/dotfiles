@@ -13,10 +13,10 @@
     "context7@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/marcusdb/.claude/plugins/cache/claude-plugins-official/context7/64e3e0b88be8",
-        "version": "64e3e0b88be8",
+        "installPath": "/Users/marcusdb/.claude/plugins/cache/claude-plugins-official/context7/61d5cc60cd54",
+        "version": "61d5cc60cd54",
         "installedAt": "2025-12-28T17:50:57.976Z",
-        "lastUpdated": "2026-01-29T19:13:54.828Z",
+        "lastUpdated": "2026-01-29T23:42:07.917Z",
         "gitCommitSha": "28f34918de8e50f41201b1a3a6af23e0ff861b41"
       }
     ],
@@ -33,30 +33,30 @@
     "code-review@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/marcusdb/.claude/plugins/cache/claude-plugins-official/code-review/64e3e0b88be8",
-        "version": "64e3e0b88be8",
+        "installPath": "/Users/marcusdb/.claude/plugins/cache/claude-plugins-official/code-review/61d5cc60cd54",
+        "version": "61d5cc60cd54",
         "installedAt": "2026-01-29T21:09:02.674Z",
-        "lastUpdated": "2026-01-29T21:09:02.674Z",
+        "lastUpdated": "2026-01-29T23:42:07.920Z",
         "gitCommitSha": "64e3e0b88be8178e5d7c0159e1ed0df4dd0815a2"
       }
     ],
     "frontend-design@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/marcusdb/.claude/plugins/cache/claude-plugins-official/frontend-design/64e3e0b88be8",
-        "version": "64e3e0b88be8",
+        "installPath": "/Users/marcusdb/.claude/plugins/cache/claude-plugins-official/frontend-design/61d5cc60cd54",
+        "version": "61d5cc60cd54",
         "installedAt": "2026-01-29T21:09:14.746Z",
-        "lastUpdated": "2026-01-29T21:09:14.746Z",
+        "lastUpdated": "2026-01-29T23:42:07.919Z",
         "gitCommitSha": "64e3e0b88be8178e5d7c0159e1ed0df4dd0815a2"
       }
     ],
     "playwright@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/marcusdb/.claude/plugins/cache/claude-plugins-official/playwright/64e3e0b88be8",
-        "version": "64e3e0b88be8",
+        "installPath": "/Users/marcusdb/.claude/plugins/cache/claude-plugins-official/playwright/61d5cc60cd54",
+        "version": "61d5cc60cd54",
         "installedAt": "2026-01-29T21:09:23.988Z",
-        "lastUpdated": "2026-01-29T21:09:23.988Z",
+        "lastUpdated": "2026-01-29T23:42:07.918Z",
         "gitCommitSha": "64e3e0b88be8178e5d7c0159e1ed0df4dd0815a2"
       }
     ]

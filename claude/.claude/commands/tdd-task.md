@@ -38,6 +38,11 @@ Follow this loop until the review passes:
    repeat. Do NOT skip issues or mark the task complete with an
    unapproved review. This is mandatory.
 
+**CRITICAL: You MUST fix ALL issues found — including pre-existing
+issues not caused by your changes. Never work on a broken codebase.
+If compilation, tests, linting, or type-checking fail for ANY reason,
+fix those failures before proceeding. No exceptions.**
+
 </implementation_loop>
 
 ## Report
