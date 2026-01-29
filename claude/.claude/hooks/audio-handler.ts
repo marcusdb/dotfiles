@@ -62,12 +62,12 @@ class AudioNotificationHandler {
   }
 
   private async sendPushoverNotification(title: string, message: string): Promise<void> {
-    const PUSHOVER_APP_TOKEN = 'ateyg1frog1gx48ag8hbnn4kuxj7oh'; // Your app token
-    const PUSHOVER_USER_KEY = 'uuzuh4q3kkbifnhs1au5dq6b762dpx'; // Your user key
-    
-    // Skip if app token not configured yet
-    if (PUSHOVER_APP_TOKEN === 'YOUR_APP_TOKEN_HERE') {
-      console.log('Pushover app token not configured - skipping notification');
+    const PUSHOVER_APP_TOKEN = process.env.PUSHOVER_APP_TOKEN;
+    const PUSHOVER_USER_KEY = process.env.PUSHOVER_USER_KEY;
+
+    // Skip if credentials not configured
+    if (!PUSHOVER_APP_TOKEN || !PUSHOVER_USER_KEY) {
+      console.log('Pushover credentials not available - skipping notification');
       return;
     }
     

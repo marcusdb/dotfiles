@@ -31,7 +31,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "tsx ~/.claude/hooks/audio-handler.ts"
+            "command": "doppler run --project dotfiles --config prd -- tsx ~/.claude/hooks/audio-handler.ts"
           }
         ]
       }
@@ -41,7 +41,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "tsx ~/.claude/hooks/audio-handler.ts"
+            "command": "doppler run --project dotfiles --config prd -- tsx ~/.claude/hooks/audio-handler.ts"
           }
         ]
       }
@@ -51,7 +51,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "tsx ~/.claude/hooks/audio-handler.ts"
+            "command": "doppler run --project dotfiles --config prd -- tsx ~/.claude/hooks/audio-handler.ts"
           }
         ]
       }
@@ -80,5 +80,6 @@
   },
   "feedbackSurveyState": {
     "lastShownTime": 1754242567687
-  }
+  },
+  "model": "haiku"
 }
