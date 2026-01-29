@@ -22,7 +22,8 @@
     "shared-server",
     "context7-mcp",
     "exa",
-    "playwright"
+    "playwright",
+    "sequential-thinking"
   ],
   "hooks": {
     "Stop": [
@@ -62,7 +63,20 @@
   },
   "enabledPlugins": {
     "marcus-workflow-plugin@GoGlobal-marketplace": true,
-    "context7@claude-plugins-official": true
+    "context7@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true
+  },
+  "mcpServers": {
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    }
   },
   "feedbackSurveyState": {
     "lastShownTime": 1754242567687

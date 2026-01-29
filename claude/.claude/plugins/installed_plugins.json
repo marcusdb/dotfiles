@@ -19,6 +19,46 @@
         "lastUpdated": "2026-01-29T19:13:54.828Z",
         "gitCommitSha": "28f34918de8e50f41201b1a3a6af23e0ff861b41"
       }
+    ],
+    "typescript-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/marcusdb/.claude/plugins/cache/claude-plugins-official/typescript-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-01-29T21:08:24.920Z",
+        "lastUpdated": "2026-01-29T21:08:24.920Z",
+        "gitCommitSha": "64e3e0b88be8178e5d7c0159e1ed0df4dd0815a2"
+      }
+    ],
+    "code-review@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/marcusdb/.claude/plugins/cache/claude-plugins-official/code-review/64e3e0b88be8",
+        "version": "64e3e0b88be8",
+        "installedAt": "2026-01-29T21:09:02.674Z",
+        "lastUpdated": "2026-01-29T21:09:02.674Z",
+        "gitCommitSha": "64e3e0b88be8178e5d7c0159e1ed0df4dd0815a2"
+      }
+    ],
+    "frontend-design@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/marcusdb/.claude/plugins/cache/claude-plugins-official/frontend-design/64e3e0b88be8",
+        "version": "64e3e0b88be8",
+        "installedAt": "2026-01-29T21:09:14.746Z",
+        "lastUpdated": "2026-01-29T21:09:14.746Z",
+        "gitCommitSha": "64e3e0b88be8178e5d7c0159e1ed0df4dd0815a2"
+      }
+    ],
+    "playwright@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/marcusdb/.claude/plugins/cache/claude-plugins-official/playwright/64e3e0b88be8",
+        "version": "64e3e0b88be8",
+        "installedAt": "2026-01-29T21:09:23.988Z",
+        "lastUpdated": "2026-01-29T21:09:23.988Z",
+        "gitCommitSha": "64e3e0b88be8178e5d7c0159e1ed0df4dd0815a2"
+      }
     ]
   }
 }

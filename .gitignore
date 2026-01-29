@@ -19,3 +19,4 @@ claude/.claude/telemetry
 claude/.claude/plans
 claude/.claude/.update.lock
 claude/.claude/history.jsonl
+claude/.claude/cache
