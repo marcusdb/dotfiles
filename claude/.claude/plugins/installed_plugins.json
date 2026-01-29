@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "plugins": {
+    "marcus-workflow-plugin@GoGlobal-marketplace": [
+      {
+        "scope": "user",
+        "installPath": "/Users/marcusdb/.claude/plugins/cache/GoGlobal-marketplace/marcus-workflow-plugin/unknown",
+        "version": "unknown",
+        "installedAt": "2025-11-10T19:55:00.515Z",
+        "lastUpdated": "2025-11-10T19:55:00.515Z"
+      }
+    ],
+    "context7@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/marcusdb/.claude/plugins/cache/claude-plugins-official/context7/d49ad3558669",
+        "version": "d49ad3558669",
+        "installedAt": "2025-12-28T17:50:57.976Z",
+        "lastUpdated": "2026-01-29T08:07:11.362Z",
+        "gitCommitSha": "28f34918de8e50f41201b1a3a6af23e0ff861b41"
+      }
+    ]
+  }
+}

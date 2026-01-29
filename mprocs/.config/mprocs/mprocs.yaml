@@ -1,0 +1,30 @@
+# mprocs global configuration
+# https://github.com/pvolok/mprocs
+
+# Hide process list and show output by default
+hide_keymap_window: false
+
+# Mouse support
+mouse_scroll_speed: 3
+
+# Keybindings when process list is focused
+keymap_procs:
+  # Use Ctrl-G instead of Ctrl-A to toggle focus
+  <C-g>:
+    c: toggle-focus
+  <C-a>: null  # unbind ctrl-a (conflicts with tmux)
+
+# Keybindings when process output is focused
+keymap_term:
+  # Use Ctrl-G instead of Ctrl-A to toggle focus
+  <C-g>:
+    c: toggle-focus
+  <C-a>: null  # unbind ctrl-a (conflicts with tmux)
+
+# Example process definitions (uncomment and modify as needed)
+# procs:
+#   server:
+#     shell: "npm run dev"
+#   build:
+#     shell: "npm run build --watch"
+#     autostart: false

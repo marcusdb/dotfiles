@@ -163,5 +163,25 @@ alias vi="nvim"
 eval "$(~/.local/bin/mise activate zsh)"
 eval "$(mise x -- direnv hook zsh)"
 export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
+export PATH="/Users/marcusdb/.moon/bin:$PATH"
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# Key remapping: swap backtick/tilde with section/plus-minus
+hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000035,"HIDKeyboardModifierMappingDst":0x700000064},{"HIDKeyboardModifierMappingSrc":0x700000064,"HIDKeyboardModifierMappingDst":0x700000035}]}' >/dev/null 2>&1
+
+# pnpm
+export PNPM_HOME="/Users/marcusdb/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# Added by Antigravity
+export PATH="/Users/marcusdb/.antigravity/antigravity/bin:$PATH"
+export PATH="/opt/homebrew/share/google-cloud-sdk/bin:$PATH"
+
+
+
+export PATH="/Users/marcusdb/.bun/bin:$PATH"export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock

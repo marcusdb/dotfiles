@@ -1,0 +1,18 @@
+{
+  "GoGlobal-marketplace": {
+    "source": {
+      "source": "directory",
+      "path": "/Users/marcusdb/Documents/env/claude-code/GoGlobal-marketplace"
+    },
+    "installLocation": "/Users/marcusdb/Documents/env/claude-code/GoGlobal-marketplace",
+    "lastUpdated": "2025-12-16T15:11:18.352Z"
+  },
+  "claude-plugins-official": {
+    "source": {
+      "source": "github",
+      "repo": "anthropics/claude-plugins-official"
+    },
+    "installLocation": "/Users/marcusdb/.claude/plugins/marketplaces/claude-plugins-official",
+    "lastUpdated": "2026-01-29T16:21:38.436Z"
+  }
+}

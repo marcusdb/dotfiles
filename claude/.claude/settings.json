@@ -1,4 +1,7 @@
 {
+  "env": {
+    "ENABLE_TOOL_SEARCH": "true"
+  },
   "permissions": {
     "allow": [
       "Write",
@@ -52,6 +55,14 @@
         ]
       }
     ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "marcus-workflow-plugin@GoGlobal-marketplace": true,
+    "context7@claude-plugins-official": true
   },
   "feedbackSurveyState": {
     "lastShownTime": 1754242567687

@@ -124,3 +124,18 @@ brew install ollama
 
 # application uninstaller remover
 brew install pearcleaner
+
+brew install ripgrep
+
+brew install fd
+
+brew install pass
+
+brew install dopplerhq/cli/doppler
+
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
+
+brew install checkov
+
+brew install mprocs

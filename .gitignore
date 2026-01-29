@@ -10,3 +10,12 @@ claude/.claude/statsig
 claude/.claude.json
 claude/.claude/ide/*.lock
 claude/.claude/shell-snapshots/*.sh
+claude/.claude/debug
+claude/.claude/file-history
+claude/.claude/paste-cache
+claude/.claude/plugins/cache
+claude/.claude/tasks
+claude/.claude/telemetry
+claude/.claude/plans
+claude/.claude/.update.lock
+claude/.claude/history.jsonl

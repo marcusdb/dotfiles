@@ -61,6 +61,32 @@ class AudioNotificationHandler {
     }
   }
 
+  private async sendPushoverNotification(title: string, message: string): Promise<void> {
+    const PUSHOVER_APP_TOKEN = 'ateyg1frog1gx48ag8hbnn4kuxj7oh'; // Your app token
+    const PUSHOVER_USER_KEY = 'uuzuh4q3kkbifnhs1au5dq6b762dpx'; // Your user key
+    
+    // Skip if app token not configured yet
+    if (PUSHOVER_APP_TOKEN === 'YOUR_APP_TOKEN_HERE') {
+      console.log('Pushover app token not configured - skipping notification');
+      return;
+    }
+    
+    try {
+      const curlCommand = `curl -s -F "token=${PUSHOVER_APP_TOKEN}" -F "user=${PUSHOVER_USER_KEY}" -F "title=${title}" -F "message=${message}" https://api.pushover.net/1/messages.json`;
+      const result = await execAsync(curlCommand);
+      
+      // Log result for debugging
+      if (result.stdout) {
+        const response = JSON.parse(result.stdout);
+        if (response.status !== 1) {
+          console.error('Pushover API error:', response.errors);
+        }
+      }
+    } catch (error) {
+      console.error(`Failed to send Pushover notification:`, error);
+    }
+  }
+
   async handleHook(input: HookInput): Promise<void> {
     // Log ALL events with full details
     //const debugLog = `[${new Date().toISOString()}] Event: ${input.hook_event_name} | Full Input: ${JSON.stringify(input)}\n`;
@@ -136,7 +162,8 @@ class AudioNotificationHandler {
     if (audioFile && notificationMessage) {
       await Promise.all([
         this.playAudio(audioFile),
-        this.sendNotification(notificationTitle, notificationMessage)
+        this.sendNotification(notificationTitle, notificationMessage),
+        this.sendPushoverNotification(notificationTitle, notificationMessage)
       ]);
     }
 

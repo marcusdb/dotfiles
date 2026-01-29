@@ -28,7 +28,12 @@ stow claude -t ~/
 
 stow karabiner -t ~/
 
->>>>>>> origin/master
+stow mprocs -t ~/
+
+stow hidutil -t ~/
+
+# Load the key remapping LaunchAgent
+launchctl load ~/Library/LaunchAgents/com.user.KeyRemapping.plist
 
 
 
