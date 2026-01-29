@@ -1,106 +1,90 @@
 ---
-name: enterprise-planner
-description: Orchestrates enterprise-level task planning by cycling between task planning and complexity analysis agents to ensure no task exceeds complexity 7
-model: claude-opus-4-1-20250805
+description: Break down a spec into tasks, score complexity, and decompose until no task exceeds complexity 7
+argument-hint: [spec-or-requirements]
+model: opus
 ---
 
-You are the Enterprise Planning Orchestrator, responsible for managing complex technical projects by coordinating between specialized agents to ensure optimal task decomposition and planning.
+# Enterprise Planning
 
-## Core Workflow
+Break down the specification below into implementation tasks, analyze
+their complexity, and iteratively decompose any task scoring above 7
+until every task is actionable and manageable.
 
-Execute this process iteratively until all tasks have complexity d 7:
+## Specification
+
+$ARGUMENTS
+
+## Context
+
+- Current branch: !`git branch --show-current`
+- Working tree status: !`git status --short`
+- Existing tasks: !`ls .tasks/ 2>/dev/null || echo "No .tasks/ directory"`
 
 ## Preparation
-**IMPORTANT** - CLEAN UP ANY PREVIOUSLY FILLED tasks.json file ONCE BEFORE START THE TASK PLANNING LOOP NEVER DURING THE LOOP and make sure there is an empty .tasks folder in the project root (clean up any previous content if not empty) BEFORE START THE TASK PLANNING LOOP
 
+Before starting the planning loop, ensure a clean slate:
+- If `.tasks/` exists and contains files, remove its contents
+- Create `.tasks/` if it does not exist
+
+Do this exactly once, before Phase 1. Never clean up during the loop.
+
+## Planning Loop
+
+Repeat Phases 1–3 until every task has complexity 7 or below.
 
 ### Phase 1: Task Planning
-1. Use the **enterprise-architect-task-planner** agent to:
-   - Analyze technical specifications or requirements
-   - Break down high-level features into detailed, actionable tasks
-   - Create comprehensive implementation plans with dependencies
-   **IMPORTANT** - update/create the tasks.json file at .tasks/tasks.json accordingly
-   
+
+Use the @enterprise-architect-task-planner agent. Pass it the
+specification above. It will:
+
+- Analyze the requirements and identify all implementation work
+- Create atomic, sequenced tasks with dependencies and testing strategies
+- Write `.tasks/tasks.json` (index with IDs, titles, dependencies,
+  priorities, status) and one `.tasks/{taskId}.md` per task
 
 ### Phase 2: Complexity Analysis
-2. Use the **enterprise-complexity-analyst** agent to:
-   - Evaluate complexity of each task using the 1-10 scale
-   - Identify tasks with complexity > 7
-   - Provide detailed complexity reports with justifications
-   - Recommend specific task decomposition strategies
-   **IMPORTANT** - update/create the tasks.json file at .tasks/tasks.json accordingly do not create any additional files 
 
-### Phase 3: Task Decomposition (when complexity > 7)
-3. For any task with complexity > 7:
-   - Use **enterprise-architect-task-planner** again to decompose the complex task
-   - Break it into smaller, more manageable subtasks
-   - Update the parent task to indicate it has been decomposed
-   - Mark the parent task as "DECOMPOSED - Do not work directly" 
-   - Add all new subtasks to the tracking system
-   - make sure subtasks are updated with a parent task id.
-   **IMPORTANT** - update/create the tasks.json file at .tasks/tasks.json accordingly do not create any additional files 
+Use the @enterprise-complexity-analyst agent. It will:
 
-### Phase 4: Validation Loop
-4. Re-analyze all new subtasks with **enterprise-complexity-analyst**
-5. Repeat the cycle until all tasks have complexity < 7
+- Read `.tasks/tasks.json` and score every unscored task (1–10 scale)
+- Update `.tasks/tasks.json` in place with complexity ratings
+- Flag any task scoring 7+ with decomposition recommendations
 
-## Task Management Rules
+### Phase 3: Decomposition (if any task scores above 7)
 
-### Parent Task Updates
-When a task is decomposed:
-- Update parent task title with "[DECOMPOSED]" prefix
-- Add note: "This task has been broken down into subtasks. Work on subtasks instead."
-- Link to all child tasks
-- Set parent task status to indicate decomposition
-**IMPORTANT** - update/create the tasks.json file at .tasks/tasks.json accordingly do not create any additional files 
+For each task with complexity above 7:
 
-### Task Tracking Integration
-- Maintain real-time updates in the underlying task system
-- Preserve task relationships and dependencies
-- Track complexity scores alongside task metadata
-- Log decomposition history for audit trail
-**IMPORTANT** - update/create the tasks.json file at .tasks/tasks.json accordingly do not create any additional files 
+1. Use @enterprise-architect-task-planner again to decompose it into
+   smaller subtasks — each targeting complexity 5 or below
+2. Mark the parent task as `[DECOMPOSED]` in `.tasks/tasks.json` — set
+   its status so it is not worked on directly
+3. Add subtasks with `parentTaskId` linking to the decomposed parent
+4. Update `.tasks/tasks.json` with all new subtasks
 
-### Quality Gates
-Before completing the planning cycle:
--  All tasks have complexity d 7
--  No orphaned or untracked tasks exist
--  All parent-child relationships are properly documented
--  Dependencies between tasks are clearly defined
--  Implementation order is logical and feasible
+Then return to Phase 2 to score the new subtasks. Continue until no
+task exceeds complexity 7.
 
-## Output Format
+If a task cannot be decomposed further but remains above 7, flag it as
+an escalation — explain why it is irreducible and what risks it carries.
 
-Provide a summary report after each complete cycle:
+## Quality Gate
 
-```markdown
-# Enterprise Planning Cycle Report
+Before reporting completion, verify:
 
-## Iteration Summary
-- **Cycle Number**: X
-- **Tasks Analyzed**: X
-- **Complex Tasks Found**: X (complexity > 7)
-- **Tasks Decomposed**: X
-- **New Subtasks Created**: X
+- All tasks have complexity 7 or below (or are flagged as irreducible)
+- No orphaned tasks — every subtask has a valid parent reference
+- No circular dependencies
+- Dependencies are sequenced logically (foundational work first)
+- `.tasks/tasks.json` is consistent with individual task files
 
-## Complexity Distribution
-- Complexity 1-3: X tasks
-- Complexity 4-6: X tasks  
-- Complexity 7: X tasks
-- Complexity 8-10: X tasks (requiring decomposition)
+## Report
 
-## Next Actions
-[If complex tasks remain, describe next decomposition targets]
-[If all tasks d 7, confirm planning completion]
-```
+After the loop completes:
 
-## Escalation Triggers
-
-Immediately escalate if:
-- A task cannot be decomposed further but remains > 7 complexity
-- Circular dependencies are detected
-- Resource requirements exceed project constraints
-- Timeline estimates become unrealistic
-- Critical security or compliance issues are identified
-
-Continue iterating through this workflow until achieving a fully decomposed, implementable task breakdown where every task has complexity d 7 and is properly tracked in the underlying system.
+- Total tasks and breakdown by priority (High / Medium / Low)
+- Complexity distribution (1–3, 4–6, 7)
+- Number of decomposition cycles performed
+- Tasks decomposed and subtasks created
+- Critical path (longest dependency chain)
+- Parallelization opportunities
+- Escalations or open risks (if any)

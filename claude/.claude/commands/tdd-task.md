@@ -1,12 +1,12 @@
 ---
-description: Execute a task with guaranteed working results and code review loop
+description: Execute a task using strict TDD (Red-Green-Refactor) with code review loop
 argument-hint: [task-description]
 ---
 
-# Task Execution
+# TDD Task Execution
 
-Execute the task below with an implement-review loop until the code is
-approved.
+Execute the task below using test-driven development with an
+implement-review loop until the code is approved.
 
 ## Task
 
@@ -24,10 +24,10 @@ Follow this loop until the review passes:
 
 <implementation_loop>
 
-1. **Implement** — Use the @task-executer agent (not task-executor-tdd).
-   Pass it the task description above. It must verify the codebase is
-   clean before starting, implement incrementally, verify everything
-   works, and commit after each increment.
+1. **Implement with TDD** — Use the @task-executor-tdd agent. Pass it
+   the task description above. It must follow Kent Beck's Canon TDD:
+   write a failing test first, make it pass with minimal code, then
+   refactor. Every increment must be committed with a clean test suite.
 
 2. **Review** — Use the @clean-code-ts-reviewer agent to review the
    implementation. It must verify compilation, all tests pass, type
@@ -45,5 +45,5 @@ Follow this loop until the review passes:
 After the loop completes with an approved review:
 
 - Summarize the work done in concise bullet points
-- List any issues found and fixed (including unrelated ones)
+- List the TDD cycles completed (tests written, increments committed)
 - Report files and line changes: !`git diff --stat`

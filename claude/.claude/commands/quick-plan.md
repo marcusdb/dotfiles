@@ -1,57 +1,80 @@
-
-allowed-tools: Read,Write, Edit, Glob, Grep, MultiEdit
-description: Creates a concise engineering implementation plan based
-argument-hint: [user prompt] 
-model: claude-opus-4-1-20250805
+---
+description: Create a concise engineering implementation plan and save it to specs/
+allowed-tools: Read, Write, Edit, Glob, Grep, MultiEdit
+argument-hint: [requirements-or-feature-description]
+model: opus
 ---
 
 # Quick Plan
 
-Create a detailed implementation plan based on the user's requirements provided through the "USER_PROMPT variable. Analyze the request, think through the implementation approach, and save a comprehensive specification document to
-'PLAN_OUTPUT_DIRECTORY/<name-of-plan>.md' that can be used as a blueprint for actual development work.
+Analyze the requirements below, explore the codebase for relevant
+context, and produce a focused implementation plan saved to `specs/`.
 
-## Variables
+## Requirements
 
-USER_PROMPT: $ARGUMENTS
-PLAN_OUTPUT_DIRECTORY: 'specs/
+$ARGUMENTS
 
-## Instructions
+## Context
 
-- Carefully analyze the user's requirements provided in the USER_PROMPT variable
-- Think deeply about the best approach to implement the requested functionality or solve the problem
-    - Create a concise implementation plan that includes:
-    - Clear problem statement and objectives
-    - Technical approach and architecture decisions
-    - Step-by-step implementation guide
-    - Potential challenges and solutions
-    - Testing strategy
-    - Success criteria
-- Generate a descriptive, kebab-case filename based on the main topic of the plan
-- Save the complete implementation plan to 'PLAN_OUTPUT_DIRECTORY/<descriptive-name>.md'
-- Ensure the plan is detailed enough that another developer could follow it to implement the solution
-- Include code examples or pseudo-code where appropriate to clarify complex concepts
-- Consider edge cases, error handling, and scalability concerns
-- Structure the document with clear sections and proper markdown formatting
+- Current branch: !`git branch --show-current`
+- Project structure: !`ls -d */ 2>/dev/null | head -20`
+- Existing specs: !`ls specs/*.md 2>/dev/null || echo "No specs yet"`
 
 ## Workflow
 
-1. Analyze Requirements - THINK HARD and parse the USER_PROMPT to understand the core problem and desired outcome
-2. Design Solution - Develop technical approach including architecture decisions and implementation strategy
-3. Document Plan - Structure a comprehensive markdown document with problem statement, implementation steps, and testing approach
-4. Generate Filename - Create a descriptive kebab-case filename based on the plan's main topic
-5. Save & Report - Write the plan to 'PLAN_OUTPUT_DIRECTORY/<filename>.md' and provide a summary of key components
+### 1. Understand the Problem
+
+- Read the requirements carefully — identify the core problem and
+  desired outcome
+- Explore the codebase to understand existing patterns, architecture,
+  and conventions
+- Identify relevant files, modules, and interfaces that will be affected
+- Use Context7 if third-party libraries are involved
+
+### 2. Design the Solution
+
+Think through the approach before writing anything:
+
+- What is the simplest design that satisfies the requirements?
+- What existing patterns in the codebase should be followed?
+- What are the key technical decisions and trade-offs?
+- What could go wrong — edge cases, failure modes, security concerns?
+
+### 3. Write the Plan
+
+Create a markdown file at `specs/<descriptive-kebab-case-name>.md` with
+these sections:
+
+```markdown
+# [Plan Title]
+
+## Problem Statement
+[What problem this solves and why it matters]
+
+## Approach
+[High-level technical approach and key architecture decisions]
+
+## Implementation Steps
+[Ordered list of concrete steps — specific enough that another
+developer could follow them without asking questions]
+
+## Files Affected
+[List of files to create or modify, with brief description of changes]
+
+## Testing Strategy
+[What to test, test types, key scenarios, edge cases]
+
+## Risks and Open Questions
+[Anything uncertain, any trade-offs made, any decisions deferred]
+```
+
+Include code examples or pseudo-code where they clarify complex logic.
+Keep it concise — a plan, not a novel.
 
 ## Report
-After creating and saving the implementation plan, provide a concise report with the following format:
 
-```
-Implementation Plan Created
+After saving the plan:
 
-File: PLAN_OUTPUT_DIRECTORY/<filename>. md
-Topic: <brief description of what the plan covers>
-Key
-Combonents:
-- <main component 1>
-- <main camponent 2>
-- <main component 3>
-```
+- File path where the plan was saved
+- One-line summary of what the plan covers
+- Key components or steps (3–5 bullet points)

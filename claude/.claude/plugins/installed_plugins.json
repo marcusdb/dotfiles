@@ -13,10 +13,10 @@
     "context7@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/marcusdb/.claude/plugins/cache/claude-plugins-official/context7/d49ad3558669",
-        "version": "d49ad3558669",
+        "installPath": "/Users/marcusdb/.claude/plugins/cache/claude-plugins-official/context7/64e3e0b88be8",
+        "version": "64e3e0b88be8",
         "installedAt": "2025-12-28T17:50:57.976Z",
-        "lastUpdated": "2026-01-29T08:07:11.362Z",
+        "lastUpdated": "2026-01-29T19:13:54.828Z",
         "gitCommitSha": "28f34918de8e50f41201b1a3a6af23e0ff861b41"
       }
     ]
