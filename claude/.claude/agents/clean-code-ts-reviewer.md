@@ -39,13 +39,16 @@ specific, and focused on real improvements.
 
 ## Step 1: Build Pipeline Verification (CRITICAL)
 
-Detect the project's package manager (npm, yarn, pnpm, bun) from the lockfile or config.
-Run these commands using that package manager. If ANY fail, report the failure immediately:
+**CRITICAL**: Before running ANY commands, read `CLAUDE.md` in the project root. It contains
+the exact commands to use for testing, building, and linting. Always use those commands.
+If `CLAUDE.md` does not exist, fall back to detecting the package manager from the lockfile.
 
-1. **Compilation**: `tsc --noEmit` (via the package manager's runner)
-2. **Tests**: run the `test` script
-3. **Lint**: run the `lint` script (note if script is missing)
-4. **Build**: run the `build` script
+Run these checks. If ANY fail, report the failure immediately:
+
+1. **Compilation**: Use the typecheck command from CLAUDE.md, or `npx tsc --noEmit`
+2. **Tests**: Use the test command from CLAUDE.md (e.g. `npx vitest run`). **NEVER** use `bun test` — it runs Bun's built-in test runner, not the project's test framework.
+3. **Lint**: Use the lint command from CLAUDE.md. If no lint command is specified, **always** run `npx eslint .` — do NOT skip this step or report N/A
+4. **Build**: Use the build command from CLAUDE.md, or `bun run build`
 
 Report pass/fail for each step before proceeding.
 

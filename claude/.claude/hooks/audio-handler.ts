@@ -38,9 +38,11 @@ interface HookOutput {
 
 class AudioNotificationHandler {
   private audioDir: string;
+  private audioEnabled: boolean;
 
   constructor() {
     this.audioDir = path.join(__dirname, '..', 'audio');
+    this.audioEnabled = false; // Set to true to re-enable audio notifications
   }
 
   private async playAudio(filename: string): Promise<void> {
@@ -55,7 +57,8 @@ class AudioNotificationHandler {
 
   private async sendNotification(title: string, message: string): Promise<void> {
     try {
-      await execAsync(`osascript -e 'display notification "${message}" with title "${title}"'`);
+      const appPath = path.join(__dirname, 'ClaudeNotify.app', 'Contents', 'MacOS', 'ClaudeNotify');
+      await execAsync(`"${appPath}" "${title}" "${message}"`);
     } catch (error) {
       console.error(`Failed to send notification:`, error);
     }
@@ -160,11 +163,14 @@ class AudioNotificationHandler {
 
     // Play audio and show notification if configured
     if (audioFile && notificationMessage) {
-      await Promise.all([
-        this.playAudio(audioFile),
+      const tasks: Promise<void>[] = [
         this.sendNotification(notificationTitle, notificationMessage),
         this.sendPushoverNotification(notificationTitle, notificationMessage)
-      ]);
+      ];
+      if (this.audioEnabled) {
+        tasks.push(this.playAudio(audioFile));
+      }
+      await Promise.all(tasks);
     }
 
     // Output the hook response
