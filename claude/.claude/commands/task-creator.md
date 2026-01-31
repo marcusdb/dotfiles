@@ -18,7 +18,7 @@ $ARGUMENTS
 
 - Current branch: !`git branch --show-current`
 - Working tree status: !`git status --short`
-- Existing tasks: !`ls .tasks/ 2>/dev/null || echo "No .tasks/ directory"`
+- Existing tasks: !`ls .tasks/TASK-*.json 2>/dev/null || echo "No task files found"`
 
 ## Preparation
 
@@ -34,32 +34,30 @@ Repeat Phases 1–3 until every task has complexity 7 or below.
 
 ### Phase 1: Task Planning
 
-Use the @enterprise-architect-task-planner agent. Pass it the
-specification above. It will:
+Use the @task-planner agent. Pass it the specification above. It will:
 
 - Analyze the requirements and identify all implementation work
 - Create atomic, sequenced tasks with dependencies and testing strategies
-- Write `.tasks/tasks.json` (index with IDs, titles, dependencies,
-  priorities, status) and one `.tasks/{taskId}.md` per task
+- Write individual `.tasks/TASK-XXX.json` files (one per task)
+- No summary index file — individual task files are the source of truth
 
 ### Phase 2: Complexity Analysis
 
-Use the @enterprise-complexity-analyst agent. It will:
+Use the @task-complexity agent. It will:
 
-- Read `.tasks/tasks.json` and score every unscored task (1–10 scale)
-- Update `.tasks/tasks.json` in place with complexity ratings
+- Glob for `.tasks/TASK-*.json` and score every unscored task (1–10 scale)
+- Update each `.tasks/TASK-XXX.json` in place with a `"complexity"` field
 - Flag any task scoring 7+ with decomposition recommendations
 
 ### Phase 3: Decomposition (if any task scores above 7)
 
 For each task with complexity above 7:
 
-1. Use @enterprise-architect-task-planner again to decompose it into
-   smaller subtasks — each targeting complexity 5 or below
-2. Mark the parent task as `[DECOMPOSED]` in `.tasks/tasks.json` — set
-   its status so it is not worked on directly
-3. Add subtasks with `parentTaskId` linking to the decomposed parent
-4. Update `.tasks/tasks.json` with all new subtasks
+1. Use @task-planner again to decompose it into smaller subtasks — each
+   targeting complexity 5 or below
+2. Mark the parent task as `"status": "decomposed"` in its
+   `.tasks/TASK-XXX.json` file so it is not worked on directly
+3. Add subtask files with `parentTaskId` linking to the decomposed parent
 
 Then return to Phase 2 to score the new subtasks. Continue until no
 task exceeds complexity 7.
@@ -75,7 +73,7 @@ Before reporting completion, verify:
 - No orphaned tasks — every subtask has a valid parent reference
 - No circular dependencies
 - Dependencies are sequenced logically (foundational work first)
-- `.tasks/tasks.json` is consistent with individual task files
+- Individual `.tasks/TASK-XXX.json` files are consistent and well-formed
 
 ## Report
 

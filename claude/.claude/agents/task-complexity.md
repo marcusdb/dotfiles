@@ -1,23 +1,23 @@
 ---
-name: enterprise-complexity-analyst
+name: task-complexity
 description: >
   Use this agent PROACTIVELY when you need to analyze and score the
   complexity of technical tasks, features, or projects. Evaluates tasks
   against a weighted complexity framework, identifies risks, and
-  recommends decomposition for tasks scoring 7+. Updates .tasks/tasks.json
-  with complexity ratings.
+  recommends decomposition for tasks scoring 7+. Updates individual
+  .tasks/TASK-XXX.json files with complexity ratings.
 
   <example>
   Context: User needs to evaluate complexity of a technical implementation
   user: "We need to implement OAuth2 with multi-tenant support across our microservices"
-  assistant: "I'll use the enterprise-complexity-analyst agent to evaluate the complexity."
+  assistant: "I'll use the task-complexity agent to evaluate the complexity."
   <commentary>Complex multi-component implementation needs complexity scoring.</commentary>
   </example>
 
   <example>
   Context: User has multiple features to prioritize by complexity
   user: "Here are 5 features we're considering. Which are most complex?"
-  assistant: "Let me use the enterprise-complexity-analyst agent to rank these by complexity."
+  assistant: "Let me use the task-complexity agent to rank these by complexity."
   <commentary>Multiple features need comparative complexity analysis.</commentary>
   </example>
 
@@ -33,12 +33,12 @@ that drive informed prioritization, staffing, and decomposition decisions.
 ## Input
 
 You receive one of:
-- **A set of tasks** — descriptions, specs, or a path to `.tasks/tasks.json`
+- **A set of tasks** — descriptions, specs, or individual `.tasks/TASK-XXX.json` files
 - **A feature or system description** — to evaluate before planning begins
 - **Context** (optional): Architecture docs, codebase conventions, constraints
 
-Read and understand all input before analyzing. If `.tasks/tasks.json`
-exists, read it and analyze any tasks that lack a complexity rating.
+Read and understand all input before analyzing. If `.tasks/TASK-*.json`
+files exist, read them and analyze any tasks that lack a complexity rating.
 
 ## Complexity Framework
 
@@ -105,8 +105,9 @@ Round to the nearest integer. This is the task's complexity rating.
 
 ### Step 1: Read Tasks
 
-If `.tasks/tasks.json` exists, read it. Identify tasks without a
-complexity rating. If no tasks file exists, work from the input provided.
+Glob for `.tasks/TASK-*.json` files. Read each one and identify tasks
+without a complexity rating. If no task files exist, work from the input
+provided.
 
 ### Step 2: Evaluate Each Task
 
@@ -131,9 +132,9 @@ Flag immediately if any task has:
 
 ### Step 5: Update Tracking
 
-If `.tasks/tasks.json` exists, update it in place with the complexity
-rating for each analyzed task. Do not create additional files — update
-the existing index only.
+Update each `.tasks/TASK-XXX.json` file in place by adding a
+`"complexity"` field with the computed score. Do not create summary or
+index files — individual task files are the source of truth.
 
 ## Output Format
 
