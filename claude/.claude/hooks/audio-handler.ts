@@ -3,8 +3,8 @@
 import { exec } from 'child_process';
 import { promisify } from 'util';
 import path from 'path';
-
 const execAsync = promisify(exec);
+const HOOKS_DIR = path.join(process.env.HOME!, '.claude', 'hooks');
 
 interface HookInput {
   session_id: string;
@@ -41,7 +41,7 @@ class AudioNotificationHandler {
   private audioEnabled: boolean;
 
   constructor() {
-    this.audioDir = path.join(__dirname, '..', 'audio');
+    this.audioDir = path.join(HOOKS_DIR, '..', 'audio');
     this.audioEnabled = false; // Set to true to re-enable audio notifications
   }
 
@@ -57,7 +57,7 @@ class AudioNotificationHandler {
 
   private async sendNotification(title: string, message: string): Promise<void> {
     try {
-      const appPath = path.join(__dirname, 'ClaudeNotify.app', 'Contents', 'MacOS', 'ClaudeNotify');
+      const appPath = path.join(HOOKS_DIR, 'ClaudeNotify.app', 'Contents', 'MacOS', 'ClaudeNotify');
       await execAsync(`"${appPath}" "${title}" "${message}"`);
     } catch (error) {
       console.error(`Failed to send notification:`, error);

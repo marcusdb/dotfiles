@@ -21,3 +21,4 @@ claude/.claude/.update.lock
 claude/.claude/history.jsonl
 claude/.claude/cache
 claude/.claude/stats-cache.json
+.env
